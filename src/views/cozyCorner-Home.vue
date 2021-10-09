@@ -36,9 +36,9 @@
         methods: {
             setTime () {
                 setInterval(() => {
-                    const time = new Date()
+                    const time = new Date();
 
-                    this.hours = time.getHours()
+                    this.hours = time.getHours();
                     this.minutes = this.checkSingleDigit(time.getMinutes())
                 }, 1000)
             },
@@ -47,8 +47,8 @@
             },
             startTimer() {
                 this.timerInterval = setInterval(() => {
-                    this.timePassed += 1
-                    this.timeLeft = this.timeLimit - this.timePassed
+                    this.timePassed += 1;
+                    this.timeLeft = this.timeLimit - this.timePassed;
                     if (this.timeLimit === 0) {
                         this.onTimesUp();
                     }
@@ -60,10 +60,10 @@
         },
         computed: {
             formattedTimeLeft() {
-                const timeLeft = this.timeLeft
+                const timeLeft = this.timeLeft;
 
-                const timerMinutes = Math.floor(timeLeft / 60)
-                let seconds = timeLeft % 60
+                const timerMinutes = Math.floor(timeLeft / 60);
+                let seconds = timeLeft % 60;
 
                 if (seconds < 10) {
                     seconds = `0${seconds}`
@@ -73,7 +73,7 @@
         },
 
         mounted() {
-            this.setTime()
+            this.setTime();
             this.startTimer();
         },
 

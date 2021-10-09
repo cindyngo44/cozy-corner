@@ -21,9 +21,9 @@
         methods: {
             setTime() {
                 setInterval(() => {
-                    const time = new Date()
+                    const time = new Date();
 
-                    this.hours = time.getHours()
+                    this.hours = time.getHours();
                     this.minutes = this.checkSingleDigit(time.getMinutes())
                 }, 1000)
             },
