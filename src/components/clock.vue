@@ -5,6 +5,7 @@
             <div class="hour">{{hours}}</div>
             <div class="dots">:</div>
             <div class="min">{{minutes}}</div>
+            <div class="date">{{date}}</div>
         </div>
     </div>
 </template>
@@ -16,6 +17,7 @@
             return {
                 hours: "",
                 minutes: "",
+                date: "",
             }
         },
         methods: {
@@ -25,6 +27,7 @@
 
                     this.hours = time.getHours();
                     this.minutes = this.checkSingleDigit(time.getMinutes())
+                    this.date = (time.getMonth() + 1 )+ '/' + time.getDate() + '/' + time.getFullYear();
                 }, 1000)
             },
             checkSingleDigit(digit) {
@@ -44,7 +47,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 130px;
+        width: 280px;
         height: 50px;
         background: #164979;
         border-radius: 10px;
@@ -57,6 +60,12 @@
         font-size: 27px;
         font-family: "Arial", sans-serif;
         font-weight: bold;
+    }
+    .date{
+        font-size: 27px;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        padding-left: 20px;
     }
     .dots {
         font-size: 23px;

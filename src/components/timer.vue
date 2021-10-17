@@ -55,7 +55,7 @@
                 let seconds = timeLeft % 60;
 
                 if (seconds < 10) {
-                    seconds = `0${seconds}`
+                    seconds = `${seconds}`
                 }
                 return `${timerMinutes}`
             }

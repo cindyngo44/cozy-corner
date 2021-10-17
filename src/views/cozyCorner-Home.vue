@@ -2,7 +2,8 @@
     <div id="app">
         <div class = "background" >
             <clock class = "clockContainer"/>
-            <timer class="timerContainer"/>
+            <timer class= "timerContainer"/>
+            <todo class = "todoContainer"/>
         </div>
     </div>
 </template>
@@ -10,11 +11,13 @@
 <script>
     import Clock from "../components/clock"
     import Timer from "../components/timer"
+    import Todo from "../components/todo"
     export default {
         name: "Home",
         components: {
             Clock,
             Timer,
+            Todo,
         },
     };
 
@@ -34,13 +37,19 @@
     .clockContainer {
         position: absolute;
         top: 80px;
-        right: 100px;
+        right: 200px;
         width: 150px;
     }
     .timerContainer{
         position: absolute;
         top: 150px;
-        right: 100px;
+        right: 200px;
         width: 140px;
+    }
+    .todoContainer{
+        position: absolute;
+        bottom: 80px;
+        left: 100px;
+        width: 150px;
     }
 </style>
