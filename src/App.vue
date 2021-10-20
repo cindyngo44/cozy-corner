@@ -1,20 +1,13 @@
 <template>
-  <div>
-    <cozyCornerHome></cozyCornerHome>
-  </div>
+  <cozy-corner-home />
 </template>
 
 <script>
-  import cozyCornerHome from "./views/cozyCorner-Home"
-
+  import CozyCornerHome from "./views/cozy-corner-home"
   export default {
    name: 'App',
    components: {
-     cozyCornerHome,
-    },
-  };
+     CozyCornerHome,
+    }
+  }
 </script>
-
-<style>
-
-</style>
