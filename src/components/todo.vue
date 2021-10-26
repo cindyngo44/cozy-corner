@@ -97,7 +97,6 @@
     }
     .task,
     .add {
-        border-bottom: 2px solid #FFF8F0;
         display: grid;
         width: 200px;
     }

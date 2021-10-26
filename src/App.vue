@@ -6,7 +6,6 @@
 
 <script>
   import cozyCornerHome from "./views/cozyCorner-Home"
-
   export default {
    name: 'App',
    components: {
