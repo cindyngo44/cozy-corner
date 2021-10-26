@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <div class="background">
-      <clock class="clockContainer" />
+      <clock class="clockContainer" content="This is a clock!" v-tippy />
       <timer />
+      <button content="Hi!" v-tippy>My Button!</button>
       <div class="timerContainer">
         <div class="timerFace">
           <div class="timer">{{ formattedTimeLeft }} minutes left</div>
