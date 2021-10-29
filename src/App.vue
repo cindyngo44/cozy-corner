@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <cozyCornerHome></cozyCornerHome>
-  </div>
+  <cozyCornerHome />
 </template>
 
 <script>

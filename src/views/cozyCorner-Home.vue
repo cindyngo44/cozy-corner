@@ -1,9 +1,11 @@
 <template>
-    <div id="app">
-        <div class = "background" >
-            <clock class = "clockContainer"/>
-            <timer class= "timerContainer"/>
-            <todo class = "todoContainer"/>
+    <div class = "background" >
+        <div class="UIContainer">
+            <div class="timeContainer">
+                <clock class="clock"/>
+                <timer class="timer"/>
+            </div>
+            <todo class="todo"/>
         </div>
     </div>
 </template>
@@ -23,7 +25,7 @@
 
 </script>
 
-<style scoped>
+<style>
     .background {
         position: fixed;
         top: 0;
@@ -32,24 +34,28 @@
         min-height: 100%;
         background-size: cover;
         background-image: url('../assets/backgroundIMG.gif');
-
     }
-    .clockContainer {
-        position: absolute;
-        top: 80px;
-        right: 200px;
-        width: 150px;
+    .UIContainer {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
-    .timerContainer{
-        position: absolute;
-        top: 150px;
-        right: 200px;
-        width: 140px;
+    .timeContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-self: flex-end;
+        margin: 30px;
     }
-    .todoContainer{
-        position: absolute;
-        bottom: 80px;
-        left: 100px;
-        width: 150px;
+    .clock {
+        margin-bottom: 20px;
+    }
+    .timer {
+        flex: 1 1 0%;
+    }
+    .todo {
+        align-self: flex-start;
+        margin: 30px;
     }
 </style>
