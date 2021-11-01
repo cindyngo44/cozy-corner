@@ -3,7 +3,8 @@
         <div class="UIContainer">
             <div class="timeContainer">
                 <clock class="clock"/>
-                <timer class="timer"/>
+                <timer class="timer" content="Set a study timer! Click to play/pause" 
+                v-tippy = "{arrow: true , animation : 'fade'}"/>
             </div>
             <todo class="todo"/>
         </div>
@@ -34,6 +35,7 @@
         min-height: 100%;
         background-size: cover;
         background-image: url('../assets/backgroundIMG.gif');
+        
     }
     .UIContainer {
         height: 100vh;
@@ -57,5 +59,10 @@
     .todo {
         align-self: flex-start;
         margin: 30px;
+    }
+    .tippy-tooltip {
+        font-size: 12px;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
     }
 </style>
