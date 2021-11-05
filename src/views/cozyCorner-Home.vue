@@ -4,6 +4,7 @@
             <div class="timeContainer">
                 <clock class="clock"/>
                 <timer class="timer"/>
+                <music-player></music-player>
             </div>
             <todo class="todo"/>
         </div>
@@ -14,12 +15,15 @@
     import Clock from "../components/clock"
     import Timer from "../components/timer"
     import Todo from "../components/todo"
+    import MusicPlayer from "../components/music-player"
+
     export default {
         name: "Home",
         components: {
             Clock,
             Timer,
             Todo,
+            MusicPlayer
         },
     };
 
