@@ -46,15 +46,14 @@
     .timeContainer {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-self: flex-end;
         margin: 30px;
     }
     .clock {
         margin-bottom: 10px;
+        align-self: flex-end;
     }
     .timer {
-        flex: 1 1 0%;
+        align-self: flex-end;
     }
     .todo {
         align-self: flex-start;

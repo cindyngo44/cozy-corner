@@ -1,6 +1,6 @@
 <template>
     <div class="timerWrapper">
-        <div class ="timer">{{formattedTimeLeft}} minutes left</div>
+        <div class ="timeLeft">{{formattedTimeLeft}} minutes left</div>
         <div class="timerIntRow">
             <div class="timerIntCol">
                 <div class="icons">+</div>
@@ -78,13 +78,13 @@
         background: #071532;
         border-radius: 50px;
         color: #FFFFFF;
-        padding: 10px;
+        padding: 30px;
     }
-    .timer {
-        font-size: 15px;
+    .timeLeft {
+        font-size: 18px;
         font-family: "Arial", sans-serif;
         font-weight: bold;
-        padding-bottom: 8px;
+        padding-bottom: 30px;
     }
     .icons{
        font-size: 22px;
