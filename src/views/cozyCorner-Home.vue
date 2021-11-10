@@ -3,8 +3,8 @@
         <div class="UIContainer">
             <div class="timeContainer">
                 <clock class="clock"/>
-                <timer class="timer" content="Set a study timer! Click to play/pause" 
-                v-tippy = "{arrow: true , animation : 'fade'}"/>
+                <timer class="timer" content="Study Timer: Click to play/pause" 
+                    v-tippy = "{arrow: true , animation : 'fade'}"/>
             </div>
             <todo class="todo"/>
         </div>
@@ -51,18 +51,20 @@
         margin: 30px;
     }
     .clock {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     .timer {
         flex: 1 1 0%;
     }
     .todo {
         align-self: flex-start;
-        margin: 30px;
+        margin-left: 50px;
+        margin-bottom: 90px;
     }
     .tippy-tooltip {
         font-size: 12px;
         font-family: "Arial", sans-serif;
         font-weight: bold;
+        background: #0F3F6E;
     }
 </style>

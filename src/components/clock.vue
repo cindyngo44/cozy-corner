@@ -47,22 +47,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 280px;
-        height: 50px;
-        background: #164979;
-        border-radius: 10px;
-        border-width: thick;
-        border-style: solid;
-        border-color: #FFF8F0;
-        color: #FFF8F0;
+        width: 320px;
+        height: 75px;
+        background: #071532;
+        border-radius: 50px;
+        color: #FFFFFF;
     }
     .hour, .min{
-        font-size: 27px;
+        font-size: 30px;
         font-family: "Arial", sans-serif;
         font-weight: bold;
     }
     .date{
-        font-size: 27px;
+        font-size: 30px;
         font-family: "Arial", sans-serif;
         font-weight: bold;
         padding-left: 20px;

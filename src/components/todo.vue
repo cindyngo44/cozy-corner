@@ -6,7 +6,7 @@
             <div class="add">
                 <input class = "input font" type="text" placeholder="add a new task" @keyup.enter="addTask" v-model="task" maxlength = "30">
             </div>
-            <div class="task" v-for="(task, i) in tasks.slice(0, 7)" :key="task.text" >
+            <div class="task" v-for="(task, i) in tasks.slice(0, 6)" :key="task.text" >
                 <p class="task__text font" :class="{task__text__completed: task.completed}">{{ task.text}}</p>
                 <button class="task__delete" @click="deleteTask(i)">x</button>
             </div>
@@ -50,13 +50,9 @@
         line-height: 1.4em;
         margin: 0 auto;
         width: 280px;
-        height: 300px;
-        background: #164979;
-        border-radius: 10px;
-        border-width: thick;
-        border-style: solid;
-        border-color: #FFF8F0;
-        color: #FFF8F0;
+        height: 280px;
+        background: #071532;
+        border-radius: 50px;
     }
     .todolist{
         position: relative;
@@ -71,6 +67,7 @@
         font-size: 15px;
         font-family: "Arial", sans-serif;
         font-weight: bold;
+        color: #FFFFFF;
 
     }
     .font{
@@ -83,10 +80,10 @@
     }
     .input{
         border: 0;
-        color: #FFF8F0;
+        color: #FFFFFF;
         font-size: 12px;
         font-family: "Arial", sans-serif;
-        background: #164979;
+        background: #071532;
         width: 200px;
     }
     .task {
@@ -112,11 +109,12 @@
     .task__text {
         justify-self: start;
         height: 10px;
+        color: #FFFFFF;
     }
     .task__delete {
         font-size: 10px;
         justify-self: end;
-        color: #FFF8F0;
+        color: #FFFFFF;
     }
 
     .task__delete:hover {

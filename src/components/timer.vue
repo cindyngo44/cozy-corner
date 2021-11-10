@@ -3,14 +3,16 @@
         <div class ="timer">{{formattedTimeLeft}} minutes left</div>
         <div class="timerIntRow">
             <div class="timerIntCol">
-                <button class="timerButton" @click="addTime(5)">+5</button>
-                <button class="timerButton" @click="addTime(10)">+10</button>
-                <button class="timerButton" @click="addTime(20)">+20</button>
+                <div class="icons">+</div>
+                <button class="timerButton" @click="addTime(5)">5</button>
+                <button class="timerButton" @click="addTime(10)">10</button>
+                <button class="timerButton" @click="addTime(20)">20</button>
             </div>
             <div class="timerIntCol">
-                <button class="timerButton" @click="addTime(-5)">-5</button>
-                <button class="timerButton" @click="addTime(-10)">-10</button>
-                <button class="timerButton" @click="addTime(-20)">-20</button>
+                <div class="icons">-</div>
+                <button class="timerButton" @click="addTime(-5)">5</button>
+                <button class="timerButton" @click="addTime(-10)">10</button>
+                <button class="timerButton" @click="addTime(-20)">20</button>
             </div>
         </div>
     </div>
@@ -73,12 +75,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background: #164979;
-        border-radius: 10px;
-        border-width: thick;
-        border-style: solid;
-        border-color: #FFF8F0;
-        color: #FFF8F0;
+        background: #071532;
+        border-radius: 50px;
+        color: #FFFFFF;
         padding: 10px;
     }
     .timer {
@@ -87,17 +86,30 @@
         font-weight: bold;
         padding-bottom: 8px;
     }
+    .icons{
+       font-size: 22px;
+    }
     .timerButton {
+        width: 30px;
+        height: 30px;
+        background: #071532;
+        border-radius: 50px;
+        border-color: #FFFFFF;
+        font-size: 12px;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        color: #FFFFFF;
         padding: 5px;
     }
     .timerIntRow {
         display: grid;
         grid-template-rows: repeat(2, minmax(0, 1fr));
         row-gap: 5px;
+        padding-bottom: 5px;
     }
     .timerIntCol {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        column-gap: 3px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        column-gap: 7px;
     }
 </style>
