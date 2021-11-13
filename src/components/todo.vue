@@ -53,6 +53,7 @@
         height: 280px;
         background: #071532;
         border-radius: 50px;
+        box-shadow: 0px 7px 8px -7px black;
     }
     .todolist{
         position: relative;

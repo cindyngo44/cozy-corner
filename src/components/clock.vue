@@ -52,6 +52,7 @@
         background: #071532;
         border-radius: 50px;
         color: #FFFFFF;
+        box-shadow: 0px 7px 8px -7px black;
     }
     .hour, .min{
         font-size: 30px;

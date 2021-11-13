@@ -1,6 +1,7 @@
 <template>
     <div class="timerWrapper">
-        <div class ="timeLeft">{{formattedTimeLeft}} minutes left</div>
+        <div class ="timeLeft" @click="playTimer"  content="paused"
+             v-tippy = "{ distance: 3, trigger : 'click', animation : 'fade'}">{{formattedTimeLeft}} minutes left</div>
         <div class="timerIntRow">
             <div class="timerIntCol">
                 <div class="icons">+</div>
@@ -28,7 +29,7 @@
                 timeLimit: 3600,
                 timePassed: 0,
                 timeLeft: 0,
-                timeInterval: null,
+                timerInterval: null,
             }
         },
         methods: {
@@ -36,18 +37,30 @@
                 this.timerInterval = setInterval(() => {
                     this.timePassed += 1;
                     this.timeLeft = this.timeLimit - this.timePassed;
-                    if (this.timeLimit === 0) {
+                    if (this.timeLimit <= 0) {
                         this.onTimesUp();
                     }
                 }, 1000);
             },
             onTimesUp() {
+                this.timeLimit = 0;
+                this.timePassed = 0;
+                this.timeLeft = 0;
+                this.hours = '0';
+                this.minutes = '0';
                 clearInterval(this.timerInterval);
             },
             addTime (minutes) {
                 this.timeLimit += (minutes * 60)
                 this.timeLeft = this.timeLimit - this.timePassed
-            }
+            },
+            playTimer(){
+                if (!this.timerInterval)
+                    this.startTimer();
+                else
+                    clearInterval(this.timerInterval);
+                    delete this.timerInterval;
+            },
         },
         computed: {
             formattedTimeLeft() {
@@ -78,20 +91,21 @@
         background: #071532;
         border-radius: 50px;
         color: #FFFFFF;
-        padding: 30px;
+        padding: 25px;
+        box-shadow: 0px 7px 8px -7px black;
     }
     .timeLeft {
         font-size: 18px;
         font-family: "Arial", sans-serif;
         font-weight: bold;
-        padding-bottom: 30px;
+        padding-bottom: 20px;
     }
     .icons{
-       font-size: 22px;
+       font-size: 25px;
     }
     .timerButton {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height:40px;
         background: #071532;
         border-radius: 50px;
         border-color: #FFFFFF;
@@ -104,8 +118,8 @@
     .timerIntRow {
         display: grid;
         grid-template-rows: repeat(2, minmax(0, 1fr));
-        row-gap: 5px;
-        padding-bottom: 5px;
+        row-gap: 7px;
+        padding-bottom: 7px;
     }
     .timerIntCol {
         display: grid;

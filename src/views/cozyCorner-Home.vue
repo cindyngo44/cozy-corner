@@ -3,8 +3,7 @@
         <div class="UIContainer">
             <div class="timeContainer">
                 <clock class="clock"/>
-                <timer class="timer" content="Study Timer: Click to play/pause" 
-                    v-tippy = "{arrow: true , animation : 'fade'}"/>
+                <timer class="timer"/>
             </div>
             <todo class="todo"/>
         </div>
@@ -61,7 +60,7 @@
         margin-bottom: 90px;
     }
     .tippy-tooltip {
-        font-size: 12px;
+        font-size: 15px;
         font-family: "Arial", sans-serif;
         font-weight: bold;
         background: #0F3F6E;
