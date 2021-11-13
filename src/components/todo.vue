@@ -48,7 +48,6 @@
     }
     .todolistBox{
         line-height: 1.4em;
-        margin: 0 auto;
         width: 280px;
         height: 280px;
         background: #071532;

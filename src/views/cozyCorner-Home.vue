@@ -1,11 +1,14 @@
 <template>
-    <div class = "background" >
-        <div class="UIContainer">
-            <div class="timeContainer">
-                <clock class="clock"/>
-                <timer class="timer"/>
+    <div>
+        <div class = "background" >
+            <div class="UIContainer">
+                <div class="timeContainer">
+                    <clock class="clock"/>
+                    <timer class="timer"/>
+                </div>
+                <todo class="todo"/>
+                <credits class="credits"/>
             </div>
-            <todo class="todo"/>
         </div>
     </div>
 </template>
@@ -14,9 +17,11 @@
     import Clock from "../components/clock"
     import Timer from "../components/timer"
     import Todo from "../components/todo"
+    import Credits from "../components/credits"
     export default {
         name: "Home",
         components: {
+            Credits,
             Clock,
             Timer,
             Todo,
@@ -57,7 +62,12 @@
     .todo {
         align-self: flex-start;
         margin-left: 50px;
-        margin-bottom: 90px;
+        margin-bottom: -100px;
+    }
+    .credits{
+        align-self: flex-end;
+        margin-right: 50px;
+        margin-bottom: 10px;
     }
     .tippy-tooltip {
         font-size: 15px;
