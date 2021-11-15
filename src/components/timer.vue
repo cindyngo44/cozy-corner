@@ -1,7 +1,7 @@
 <template>
     <div class="timerWrapper">
         <div class ="timeLeft" @click="playTimer"  content="paused"
-             v-tippy = "{ distance: 3, trigger : 'click', animation : 'fade'}">{{formattedTimeLeft}} minutes left</div>
+             v-tippy = "{ distance: 5, trigger : 'click', animation : 'fade'}">{{formattedTimeLeft}} minutes left</div>
         <div class="timerIntRow">
             <div class="timerIntCol">
                 <div class="icons">+</div>
@@ -15,6 +15,10 @@
                 <button class="timerButton" @click="addTime(-10)">10</button>
                 <button class="timerButton" @click="addTime(-20)">20</button>
             </div>
+        </div>
+        <div class="musicwrapper">
+            <audio ref="alarmPlayer" src="../assets/audio/alarm.wav" preload="metadata">
+            </audio>
         </div>
     </div>
 </template>
@@ -30,6 +34,7 @@
                 timePassed: 0,
                 timeLeft: 0,
                 timerInterval: null,
+                isPlaying: false,
             }
         },
         methods: {
@@ -37,8 +42,11 @@
                 this.timerInterval = setInterval(() => {
                     this.timePassed += 1;
                     this.timeLeft = this.timeLimit - this.timePassed;
+                    this.isPlaying = false;
                     if (this.timeLimit <= 0) {
+                        console.log(this.timeLimit);
                         this.onTimesUp();
+                        this.playAlarm();
                     }
                 }, 1000);
             },
@@ -50,9 +58,22 @@
                 this.minutes = '0';
                 clearInterval(this.timerInterval);
             },
+            playAlarm(){
+                this.isPlaying = true;
+                if(this.isPlaying){
+                    this.$refs.alarmPlayer.play();
+                    this.$refs.alarmPlayer.volume = 0.8;
+                }
+            },
             addTime (minutes) {
                 this.timeLimit += (minutes * 60)
                 this.timeLeft = this.timeLimit - this.timePassed
+
+                if (this.timeLimit <= 0) {
+                    console.log(this.timeLimit);
+                    this.onTimesUp();
+                    this.playAlarm();
+                }
             },
             playTimer(){
                 if (!this.timerInterval)
@@ -75,7 +96,6 @@
                 return `${timerMinutes}`
             }
         },
-
         mounted() {
             this.startTimer()
         },

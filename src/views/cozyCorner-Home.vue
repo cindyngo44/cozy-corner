@@ -5,6 +5,7 @@
                 <div class="timeContainer">
                     <clock class="clock"/>
                     <timer class="timer"/>
+                    <music-player/>
                 </div>
                 <todo class="todo"/>
                 <credits class="credits"/>
@@ -18,9 +19,11 @@
     import Timer from "../components/timer"
     import Todo from "../components/todo"
     import Credits from "../components/credits"
+    import MusicPlayer from "../components/musicPlayer"
     export default {
         name: "Home",
         components: {
+            MusicPlayer,
             Credits,
             Clock,
             Timer,

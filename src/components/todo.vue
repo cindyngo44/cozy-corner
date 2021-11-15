@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div class = "todolistBox">
+        <div class = "todolistBox"  content="Do your best! :)"
+             v-tippy = "{ distance: 5, animation : 'fade'}">
         <div class = "todolist">
             <h1>To Do List:</h1>
             <div class="add">
@@ -10,8 +11,6 @@
                 <p class="task__text font" :class="{task__text__completed: task.completed}">{{ task.text}}</p>
                 <button class="task__delete" @click="deleteTask(i)">x</button>
             </div>
-
-
         </div>
         </div>
     </div>
