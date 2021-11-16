@@ -16,7 +16,7 @@
                 <button class="timerButton" @click="addTime(-20)">20</button>
             </div>
         </div>
-        <div class="musicwrapper">
+        <div>
             <audio ref="alarmPlayer" src="../assets/audio/alarm.wav" preload="metadata">
             </audio>
         </div>
@@ -70,7 +70,6 @@
                 this.timeLeft = this.timeLimit - this.timePassed
 
                 if (this.timeLimit <= 0) {
-                    console.log(this.timeLimit);
                     this.onTimesUp();
                     this.playAlarm();
                 }

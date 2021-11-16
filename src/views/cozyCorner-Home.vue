@@ -2,13 +2,13 @@
     <div>
         <div class = "background" >
             <div class="UIContainer">
+                <todo class="todo"/>
                 <div class="timeContainer">
                     <clock class="clock"/>
                     <timer class="timer"/>
-                    <music-player/>
+                    <music-player class="music"/>
+                    <credits class="credits"/>
                 </div>
-                <todo class="todo"/>
-                <credits class="credits"/>
             </div>
         </div>
     </div>
@@ -47,30 +47,37 @@
     .UIContainer {
         height: 100vh;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-between;
     }
     .timeContainer {
         display: flex;
         flex-direction: column;
         margin: 30px;
+        flex-wrap: wrap;
     }
+
     .clock {
         margin-bottom: 10px;
         align-self: flex-end;
     }
     .timer {
         align-self: flex-end;
+        margin-bottom: 10px;
     }
     .todo {
         align-self: flex-start;
         margin-left: 50px;
-        margin-bottom: -100px;
+        margin-top: 450px;
+    }
+    .music{
+        margin-bottom: 10px;
+        align-self: flex-end;
     }
     .credits{
         align-self: flex-end;
         margin-right: 50px;
-        margin-bottom: 10px;
+
     }
     .tippy-tooltip {
         font-size: 15px;
