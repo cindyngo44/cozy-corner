@@ -44,7 +44,6 @@
                     this.timeLeft = this.timeLimit - this.timePassed;
                     this.isPlaying = false;
                     if (this.timeLimit <= 0) {
-                        console.log(this.timeLimit);
                         this.onTimesUp();
                         this.playAlarm();
                     }
@@ -118,6 +117,7 @@
         font-family: "Arial", sans-serif;
         font-weight: bold;
         padding-bottom: 20px;
+        cursor: pointer;
     }
     .icons{
        font-size: 25px;
@@ -133,6 +133,7 @@
         font-weight: bold;
         color: #FFFFFF;
         padding: 5px;
+        cursor: pointer;
     }
     .timerIntRow {
         display: grid;

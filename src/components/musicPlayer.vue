@@ -3,23 +3,19 @@
         <div class="musicIntCol">
             <div class="musicIntRow">
                 <button>
-                    <font-awesome-icon :icon="['fas', 'music']" />
+                    <font-awesome-icon @click="playLofi" :icon="['fas', 'music']" />
                 </button>
+                <audio loop preload="metadata" ref="lofiMusic" src="../assets/audio/relaxing_lofi.wav"></audio>
                 <button>
-                    <font-awesome-icon :icon="['fas', 'cloud-showers-heavy']" />
+                    <font-awesome-icon @click="playRain" :icon="['fas', 'cloud-showers-heavy']" />
                 </button>
+                <audio loop preload="metadata" ref="rain" src="../assets/audio/rain.wav"></audio>
                 <button>
-                    <font-awesome-icon :icon="['fas', 'fire-alt']" />
+                    <font-awesome-icon @click="playFire" :icon="['fas', 'fire-alt']" />
                 </button>
-                <!-- <img src="../assets/music.png" content="playing"
-                     v-tippy = "{ distance: 5, animation : 'fade'}"/>
-                <img src="../assets/rain.png" content="playing"
-                     v-tippy = "{ distance: 5, animation : 'fade'}"/>
-                <img src="../assets/fire.png" content="playing"
-                     v-tippy = "{ distance: 5, animation : 'fade'}"/> -->
+                <audio loop preload="metadata" ref="fire" src="../assets/audio/fire.wav"></audio>
             </div>
             <div class="musicIntRow">
-
             </div>
         </div>
     </div>
@@ -28,7 +24,33 @@
 <script>
 
     export default {
-        name: "musicPlayer"
+        name: "musicPlayer",
+        methods: {
+            playLofi() {
+                var a = this.$refs.lofiMusic;
+                if (a.paused) {
+                    a.play();
+                } else {
+                    a.pause();
+                }
+            },
+            playRain() {
+                var a = this.$refs.rain;
+                if (a.paused) {
+                    a.play();
+                } else {
+                    a.pause();
+                }
+            },
+            playFire() {
+                var a = this.$refs.fire;
+                if (a.paused) {
+                    a.play();
+                } else {
+                    a.pause();
+                }
+            }
+        }
     }
 </script>
 
@@ -44,8 +66,19 @@
         padding: 25px;
         box-shadow: 0px 7px 8px -7px black;
     }
-    img{
-        width: 70px;
+    button{
+        width: 60px;
+        height: 60px;
+        font-size: 35px;
+        background: #071532;
+        border-radius: 20px;
+        border-color: #FFFFFF;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+    .toggleButton{
+        color: #071532;
+        background-color: white;
     }
     .musicIntRow {
         display: grid;
