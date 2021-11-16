@@ -30,5 +30,6 @@
         box-shadow: 0px 7px 8px -7px black;
         background-color: #F7B467;
         color: #FFFFFF;
+        cursor: pointer
     }
 </style>

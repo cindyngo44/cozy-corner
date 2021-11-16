@@ -2,12 +2,21 @@
     <div class="musicWrapper">
         <div class="musicIntCol">
             <div class="musicIntRow">
-                <img src="../assets/music.png" content="playing"
+                <button>
+                    <font-awesome-icon :icon="['fas', 'music']" />
+                </button>
+                <button>
+                    <font-awesome-icon :icon="['fas', 'cloud-showers-heavy']" />
+                </button>
+                <button>
+                    <font-awesome-icon :icon="['fas', 'fire-alt']" />
+                </button>
+                <!-- <img src="../assets/music.png" content="playing"
                      v-tippy = "{ distance: 5, animation : 'fade'}"/>
                 <img src="../assets/rain.png" content="playing"
                      v-tippy = "{ distance: 5, animation : 'fade'}"/>
                 <img src="../assets/fire.png" content="playing"
-                     v-tippy = "{ distance: 5, animation : 'fade'}"/>
+                     v-tippy = "{ distance: 5, animation : 'fade'}"/> -->
             </div>
             <div class="musicIntRow">
 
