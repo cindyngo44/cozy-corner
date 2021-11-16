@@ -1,11 +1,13 @@
 <template>
     <div class="musicWrapper">
-        <div class ="musicTitle">Music Player</div>
         <div class="musicIntCol">
             <div class="musicIntRow">
-                <img src="../assets/music.png"/>
-                <img src="../assets/rain.png"/>
-                <img src="../assets/fire.png"/>
+                <img src="../assets/music.png" content="playing"
+                     v-tippy = "{ distance: 5, animation : 'fade'}"/>
+                <img src="../assets/rain.png" content="playing"
+                     v-tippy = "{ distance: 5, animation : 'fade'}"/>
+                <img src="../assets/fire.png" content="playing"
+                     v-tippy = "{ distance: 5, animation : 'fade'}"/>
             </div>
             <div class="musicIntRow">
 
@@ -33,12 +35,6 @@
         padding: 25px;
         box-shadow: 0px 7px 8px -7px black;
     }
-    .musicTitle{
-        font-size: 18px;
-        font-family: "Arial", sans-serif;
-        font-weight: bold;
-        padding-bottom: 20px;
-    }
     img{
         width: 70px;
     }
@@ -46,6 +42,7 @@
         display: grid;
         grid-template-rows: repeat(3, minmax(0, 1fr));
         row-gap: 20px;
+        padding-top: 10px;
         padding-bottom: 10px;
     }
     .musicIntCol {
