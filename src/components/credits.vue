@@ -2,7 +2,7 @@
     <div>
         <button class="button" @click="openGitHub"   content="Thank you for using my application!"
                 v-tippy = "{ distance: 5, animation : 'fade'}">
-            Credits
+            <font-awesome-icon :icon="['fab', 'github-alt']"/> &nbsp; Credits
         </button>
     </div>
 </template>

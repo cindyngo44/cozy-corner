@@ -16,6 +16,15 @@
                 <audio loop preload="metadata" ref="fire" src="../assets/audio/fire.wav"></audio>
             </div>
             <div class="musicIntRow">
+                <div class="sliderContainer">
+                <input type="range" vertical min="0" max="100" v-model="volume" class="slider" id="myRange"/>
+                </div>
+                <div class="sliderContainer">
+                    <input type="range" vertical min="0" max="100" v-model="volume1" class="slider" id="myRange1"/>
+                </div>
+                <div class="sliderContainer">
+                    <input type="range" vertical min="0" max="100" v-model="volume2" class="slider" id="myRange2"/>
+                </div>
             </div>
         </div>
     </div>
@@ -25,6 +34,13 @@
 
     export default {
         name: "musicPlayer",
+        data(){
+            return{
+                volume: 50,
+                volume1: 50,
+                volume2: 50,
+            }
+        },
         methods: {
             playLofi() {
                 var a = this.$refs.lofiMusic;
@@ -50,6 +66,17 @@
                     a.pause();
                 }
             }
+        },
+        watch:{
+            volume(v){
+                this.$refs.lofiMusic.volume = v / 100.0
+            },
+            volume1(v){
+                this.$refs.rain.volume = v / 100.0
+            },
+            volume2(v){
+                this.$refs.fire.volume = v / 100.0
+            }
         }
     }
 </script>
@@ -66,6 +93,20 @@
         padding: 25px;
         box-shadow: 0px 7px 8px -7px black;
     }
+
+    .musicIntRow {
+        display: grid;
+        grid-template-rows: repeat(3, minmax(0, 1fr));
+        row-gap: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        align-items: center;
+    }
+    .musicIntCol {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 0px;
+    }
     button{
         width: 60px;
         height: 60px;
@@ -76,21 +117,13 @@
         color: #FFFFFF;
         cursor: pointer;
     }
-    .toggleButton{
-        color: #071532;
-        background-color: white;
+    .sliderContainer{
+        padding-left: 30px;
     }
-    .musicIntRow {
-        display: grid;
-        grid-template-rows: repeat(3, minmax(0, 1fr));
-        row-gap: 20px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+    .slider{
+        -webkit-appearance: slider-vertical; /* WebKit */
+        width: 8px;
+        height: 60px;
+        cursor: pointer;
     }
-    .musicIntCol {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 25px;
-    }
-
 </style>

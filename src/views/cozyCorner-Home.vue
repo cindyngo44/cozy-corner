@@ -76,7 +76,7 @@
     }
     .credits{
         align-self: flex-end;
-        margin-right: 50px;
+        margin-right: 30px;
 
     }
     .tippy-tooltip {
